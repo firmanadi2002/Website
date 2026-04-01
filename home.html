@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firman Adi | Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" href="">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#E0E7FF',
+                        accent: '#3B82F6',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <nav class="sticky top-0 z-10 bg-gray-50/90 shadow-md py-4 px-8 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="text-2xl font-bold text-gray-900">Firman Adi</div>
+        <ul class="hidden md:flex space-x-8 text-sm font-semibold text-gray-500 uppercase">
+            <li><a href="#home" class="hover:text-primary cursor-pointer transition">Home</a></li>
+            <li><a href="#about" class="hover:text-primary cursor-pointer transition">About</a></li>
+            <li><a href="#portfolio" class="hover:text-primary cursor-pointer transition">Portfolio</a></li>
+            <li><a href="#contact" class="hover:text-primary cursor-pointer transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="max-w-7xl mx-auto px-8 py-12 flex flex-col-reverse md:flex-row items-center">
+        <div class="md:w-1/2 space-y-6">
+            <p class="text-xl text-gray-600">
+                Hello, I'm <br><span class="text-gray-900 font-bold text-3xl">Firman Adi Ramadhan</span>
+            </p>
+
+            <h1 class="text-5xl md:text-6xl font-bold text-primary leading-tight">
+                Designing Intelligent Interfaces
+            </h1>
+
+            <p class="text-gray-500 max-w-lg">
+                Informatics Graduate with a background in AI, now channeling analytical skills into building intuitive Front-End experiences. Bridging the gap between complex logic and user-friendly design.
+            </p>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center relative">
+            <div class="absolute w-64 h-64 bg-secondary rounded-full -z-10 top-0 right-10"></div>
+            <img src="assets/foto1.png" alt="Firman Adi" class="w-72 h-auto object-cover rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition duration-500">
+        </div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2 relative flex justify-center">
+            <div class="absolute w-64 h-64 bg-secondary rounded-full -z-10 bottom-0 left-10"></div>
+            <img src="assets/foto2.png" alt="Firman Adi" class="w-80 h-auto object-cover rounded-2xl shadow-lg"">
+        </div>
+
+        <div class="md:w-1/2 space-y-6">
+            <h2 class="text-4xl font-bold text-primary">
+                Bridging Logic and Creativity
+            </h2>
+            <p class="text-gray-600">
+                Coming from an AI background, I learned that powerful logic needs clarity. Now, I channel my analytical skills into Front-End Development—building interfaces that make complex systems feel simple for users.
+            </p>
+            <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-indigo-800 transition">
+                My Resume
+            </a>
+    </section>
+
+<section id="portfolio" class="bg-secondary py-20 mt-10">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-bold text-primary mb-6">PORTFOLIO</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Explore my journey across the tech stack. <br>
+                Leveraging AI backgrounds to build smarter, <br>
+                more intuitive web experiences.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12" id="filter-buttons">
+                <button onclick="filterProjects('All', this)" class="filter-btn bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold transition">
+                    All
+                </button>
+                <button onclick="filterProjects('UI/UX Design', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
+                    UI/UX
+                </button>
+                <button onclick="filterProjects('AI & NLP', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
+                    AI / Python
+                </button>
+                <button onclick="filterProjects('Front-End Web', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
+                    Front-End
+                </button>
+            </div>
+
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-8 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
+            <div class="relative">
+                <div class="absolute top-0 left-0 w-full h-full bg-secondary rounded-full blur-2xl opacity-50 -z-10 transform scale-125"></div>
+                <img src="assets/icon connect.png" alt="Contact" class="w-96 md:w-[500px] relative z-10">
+            </div>
+            <div class="text-left md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Let's Connect</h2>
+                <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                    Whether it's discussing AI logic, pixel-perfect designs, or a new web project—I'm always ready for a chat. Drop me a line!
+                </p>
+                <a href="mailto:firmanadiramadhan2002@gmail.com" class="bg-primary text-white px-10 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition text-lg inline-block">
+                    Say Hello
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-10 px-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex gap-6">
+                <a href="https://api.whatsapp.com/send/?phone=%2B6285156304854" target="_blank"><img src="assets/whatsapp.png" alt="Whatsapp" class="w-8 h-8 opacity-70 hover:opacity-100 hover:scale-110 transition"></a>
+                <a href="https://www.linkedin.com/in/firman-adi-ramadhan-57bb751a2/" target="_blank"><img src="assets/linkedin.png" alt="Linkedin" class="w-8 h-8 opacity-70 hover:opacity-100 hover:scale-110 transition"></a>
+                <a href="https://github.com/firmanadi2002" target="_blank"><img src="assets/github.png" alt="Github" class="w-8 h-8 opacity-70 hover:opacity-100 hover:scale-110 transition"></a>
+                <a href="https://www.instagram.com/firman5529/" target="_blank"><img src="assets/instagram.png" alt="Instagram" class="w-8 h-8 opacity-70 hover:opacity-100 hover:scale-110 transition"></a>
+            </div>        
+            <p class="text-gray-500 text-sm font-medium">
+                &copy; 2026 Firman Adi Ramadhan. Coded with ❤️
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Ini adalah "Database" kamu. Jika ada project baru, cukup tambahkan ke list ini!
+        const projects = [
+            {
+                category: "UI/UX Design",
+                title: "Japanese Learning App",
+                description: "Transforming JLPT curriculum into an interactive mobile experience for self-learners.",
+                image: "assets/project1.png"
+            },
+            {
+                category: "AI & NLP",
+                title: "Text Summarization",
+                description: "Leveraging Recurrent Gemma model to automate text summarization with high accuracy.",
+                image: "assets/project2.png" 
+            },
+            {
+                category: "Front-End Web",
+                title: "Seismometer Dashboard",
+                description: "Responsive web dashboard for monitoring seismic sensor calibration data real-time.",
+                image: "assets/project3.png" 
+            },
+            // Contoh cara menambahkan project ke-4:
+            // {
+            //     category: "AI & NLP",
+            //     title: "Object Detection AI",
+            //     description: "Mendeteksi objek menggunakan Python dan OpenCV.",
+            //     image: "assets/project4.png"
+            // }
+        ];
+
+        const gridContainer = document.getElementById('project-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Fungsi untuk merender kartu ke dalam HTML
+        function renderProjects(data) {
+            gridContainer.innerHTML = ""; // Kosongkan grid sebelum diisi ulang
+            
+            data.forEach(project => {
+                const cardHTML = `
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300 flex flex-col h-full text-left">
+                        <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover" onerror="this.style.display='none'"> 
+                        </div>
+                        <div class="text-xs font-bold text-primary uppercase tracking-wide mb-2">${project.category}</div>
+                        <h3 class="font-bold text-xl mb-2 text-gray-900">${project.title}</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed flex-grow">
+                            ${project.description}
+                        </p>
+                    </div>
+                `;
+                gridContainer.innerHTML += cardHTML;
+            });
+        }
+
+        // Fungsi untuk memfilter data saat tombol diklik
+        function filterProjects(category, clickedButton) {
+            // 1. Ubah gaya semua tombol jadi warna "tidak aktif" (putih)
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-500');
+            });
+
+            // 2. Ubah gaya tombol yang sedang diklik jadi "aktif" (ungu)
+            clickedButton.classList.remove('bg-white', 'text-gray-500');
+            clickedButton.classList.add('bg-primary', 'text-white');
+
+            // 3. Filter datanya
+            if (category === 'All') {
+                renderProjects(projects); // Tampilkan semua
+            } else {
+                const filteredData = projects.filter(project => project.category === category);
+                renderProjects(filteredData); // Tampilkan yang sesuai kategori
+            }
+        }
+
+        // Saat website pertama kali dibuka, tampilkan semua project
+        renderProjects(projects);
+    </script>
+</body>
+</html>
