@@ -83,23 +83,11 @@
                 Leveraging AI backgrounds to build smarter, <br>
                 more intuitive web experiences.
             </p>
-
-            <div class="flex flex-wrap justify-center gap-4 mb-12" id="filter-buttons">
-                <button onclick="filterProjects('All', this)" class="filter-btn bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold transition">
-                    All
-                </button>
-                <button onclick="filterProjects('UI/UX Design', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
-                    UI/UX
-                </button>
-                <button onclick="filterProjects('AI & NLP', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
-                    AI / Python
-                </button>
-                <button onclick="filterProjects('Front-End Web', this)" class="filter-btn bg-white text-gray-500 hover:text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition">
-                    Front-End
-                </button>
-            </div>
-
-            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"></div>
+            <a href="projects.html" class="inline-block bg-white text-primary border-2 border-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition duration-300 shadow-md hover:shadow-lg">
+                View All Projects ➔
+            </a>
         </div>
     </section>
 
@@ -139,79 +127,49 @@
         // 1. Ini adalah "Database" kamu. Jika ada project baru, cukup tambahkan ke list ini!
         const projects = [
             {
+                category: "AI & NLP",
+                title: "Heart Failure Prediction",
+                description: "Transforming dataset into an interactive predictive model experience.",
+                image: "assets/project1.png",
+                link: "project-heart.html" // Mengarah ke halaman detail
+            },
+            {
                 category: "UI/UX Design",
                 title: "Japanese Learning App",
                 description: "Transforming JLPT curriculum into an interactive mobile experience for self-learners.",
-                image: "assets/project1.png"
-            },
-            {
-                category: "AI & NLP",
-                title: "Text Summarization",
-                description: "Leveraging Recurrent Gemma model to automate text summarization with high accuracy.",
-                image: "assets/project2.png" 
+                image: "assets/project2.png",
+                link: "#"
             },
             {
                 category: "Front-End Web",
                 title: "Seismometer Dashboard",
                 description: "Responsive web dashboard for monitoring seismic sensor calibration data real-time.",
-                image: "assets/project3.png" 
-            },
-            // Contoh cara menambahkan project ke-4:
-            // {
-            //     category: "AI & NLP",
-            //     title: "Object Detection AI",
-            //     description: "Mendeteksi objek menggunakan Python dan OpenCV.",
-            //     image: "assets/project4.png"
-            // }
+                image: "assets/project3.png",
+                link: "#" 
+            }
         ];
 
         const gridContainer = document.getElementById('project-grid');
-        const filterBtns = document.querySelectorAll('.filter-btn');
 
-        // Fungsi untuk merender kartu ke dalam HTML
-        function renderProjects(data) {
-            gridContainer.innerHTML = ""; // Kosongkan grid sebelum diisi ulang
-            
-            data.forEach(project => {
-                const cardHTML = `
-                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300 flex flex-col h-full text-left">
-                        <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
-                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover" onerror="this.style.display='none'"> 
-                        </div>
-                        <div class="text-xs font-bold text-primary uppercase tracking-wide mb-2">${project.category}</div>
-                        <h3 class="font-bold text-xl mb-2 text-gray-900">${project.title}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed flex-grow">
-                            ${project.description}
-                        </p>
+        // 2. Ambil maksimal 3 project pertama saja untuk halaman Home
+        const homeProjects = projects.slice(0, 3);
+
+        // 3. Render ke HTML (Menggunakan tag <a> agar kartu bisa diklik)
+        homeProjects.forEach(project => {
+            const cardHTML = `
+                <a href="${project.link}" class="group bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300 flex flex-col h-full text-left border border-transparent hover:border-indigo-200">
+                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.style.display='none'"> 
                     </div>
-                `;
-                gridContainer.innerHTML += cardHTML;
-            });
-        }
-
-        // Fungsi untuk memfilter data saat tombol diklik
-        function filterProjects(category, clickedButton) {
-            // 1. Ubah gaya semua tombol jadi warna "tidak aktif" (putih)
-            filterBtns.forEach(btn => {
-                btn.classList.remove('bg-primary', 'text-white');
-                btn.classList.add('bg-white', 'text-gray-500');
-            });
-
-            // 2. Ubah gaya tombol yang sedang diklik jadi "aktif" (ungu)
-            clickedButton.classList.remove('bg-white', 'text-gray-500');
-            clickedButton.classList.add('bg-primary', 'text-white');
-
-            // 3. Filter datanya
-            if (category === 'All') {
-                renderProjects(projects); // Tampilkan semua
-            } else {
-                const filteredData = projects.filter(project => project.category === category);
-                renderProjects(filteredData); // Tampilkan yang sesuai kategori
-            }
-        }
-
-        // Saat website pertama kali dibuka, tampilkan semua project
-        renderProjects(projects);
+                    <div class="text-xs font-bold text-primary uppercase tracking-wide mb-2">${project.category}</div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-900 group-hover:text-primary transition">${project.title}</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-grow">
+                        ${project.description}
+                    </p>
+                </a>
+            `;
+            gridContainer.innerHTML += cardHTML;
+        });
     </script>
 </body>
 </html>

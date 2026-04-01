@@ -18,25 +18,24 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-poppins">
-    
-    <nav class="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 py-6 px-8">
-        <div class="max-w-7xl mx-auto flex-col ify-between items-center gap-4">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 py-6 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <a href="home.html" class="text-2xl font-bold text-gray-900 hover:text-primary transition">PORTFOLIO</a>
-            <div class="text-2xl font-bold text-gray-900">Firman Adi</div>
-            <ul class="hidden md:flex space-x-8 text-sm font-semibold text-gray-500 uppercase">
+            
+            <div class="flex space-x-6 text-sm font-semibold text-gray-500">
                 <button onclick="filterProjects('All', this)" class="filter-btn text-primary border-b-2 border-primary pb-1 transition">All</button>
                 <button onclick="filterProjects('UI/UX', this)" class="filter-btn hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition">UI/UX</button>
                 <button onclick="filterProjects('AI / Python', this)" class="filter-btn hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition">AI/Python</button>
-                <button onclick="filterProjects('Graphic Design', this)" class="filter-btn hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition">Graphic Design</button></ul>
+                <button onclick="filterProjects('Graphic Design', this)" class="filter-btn hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition">Graphic Design</button>
+            </div>
         </div>
     </nav>
 
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-8">
             <div id="full-project-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Project cards will be injected here by JavaScript -->
-
-            </div>
+                </div>
         </div>
     </section>
 
