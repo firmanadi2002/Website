@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction | Firman Adi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+                    colors: { primary: '#4F46E5', secondary: '#E0E7FF' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-poppins">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 py-4 px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/home.html" class="text-xl font-bold text-gray-900 hover:text-primary transition">⬅ Back to Home</a>
+            <a href="/projects.html" class="text-sm font-semibold text-gray-500 hover:text-primary transition uppercase">All Projects</a>
+        </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-8 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/3 flex justify-center">
+            <img src="/assets/Project/Predict-Heart.png" alt="Heart Failure App" class="w-64 shadow-2xl rounded-3xl border border-gray-200">
+        </div>
+
+        <div class="md:w-2/3 space-y-6 text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 uppercase">Heart Failure Prediction</h1>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                The primary objective of this project is to build an accurate classification model to predict heart failure. The model was trained using a dataset from the UCI Repository, which contains information such as platelet count, blood pressure status, creatine kinase levels, and other variables. This project demonstrates an end-to-end workflow for building and deploying a machine learning model.
+            </p>
+            
+            <div class="flex gap-4 pt-4">
+                <a href="https://github.com/firmanadi2002/Heart-Failure-Prediction" target="_blank" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition">
+                    View Repository
+                </a>
+                <a href="https://link-demo-kamu.com" target="_blank" class="bg-secondary text-primary px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-indigo-100 transition">
+                    Live Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary py-20">
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-10 uppercase">Workflow</h2>
+            
+            <div class="w-full h-80 bg-white/50 border border-indigo-200 rounded-2xl mb-8 flex items-center justify-center overflow-hidden shadow-inner">
+                 <span class="text-gray-400 font-medium">[ Insert Workflow Image / Diagram Here ]</span>
+                 </div>
+
+            <p class="text-gray-600 leading-relaxed text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consectetur metus, a molestie lectus. Vestibulum feugiat finibus velit, ac faucibus nisi dignissim eget. Quisque pretium, tortor vel venenatis ultricies, tellus ante faucibus erat, quis dignissim massa mi aliquam ligula.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-white py-20">
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-10 uppercase">Analysis & Result</h2>
+            <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center border border-dashed border-gray-300">
+                <span class="text-gray-400 font-medium">[ Insert Chart / Result Metric Here ]</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-8 text-center text-gray-500 text-sm border-t border-gray-200">
+        &copy; 2026 Firman Adi Ramadhan.
+    </footer>
+</body>
+</html>
